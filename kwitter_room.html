@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<title>Let's Chat rooms</title>
+
+		<link rel="stylesheet" href="style.css">
+		<script type="text/javascript" src="kwitter_room.js"></script>
+
+		<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+		
+		<link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet"><meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	</head>
+	<body onmouseover="load()">
+		<button id="logout" class="glyphicon glyphicon-log-out btn btn-danger" onclick="logout()">LOGOUT</button>
+		<div class="container">
+			<center>
+				<h1 class="header">Let's Chat Rooms <img class="img-responsive logo" src="logo.jpg"></h1>
+				<label style="font-size: 20px;" id="welcome_name"></label>
+				<div class="form-group input_div_room_page">
+					<label>Add Room:</label>
+					<input class="form-control" id="roomname" type="text" placeholder="#room_name">
+					<br>
+					<br>
+					<button class="btn btn-danger" onclick="addRoom()">Add Room</button>
+				</div>
+				<h2>Trending Rooms</h2>
+				<div id="output"></div>
+			</center>
+		</div>
+	</body>
+</html>
