@@ -1,5 +1,5 @@
 // Your web app's Firebase configuration
-var firebaseConfig = {
+const firebaseConfig = {
   apiKey: "AIzaSyCgfKJ4dku6KhhCQBhv52ctvFeIWqws5IA",
   authDomain: "letschat-21387.firebaseapp.com",
   databaseURL: "https://letschat-21387-default-rtdb.firebaseio.com",
@@ -18,7 +18,7 @@ function load() {
 };
 
 function addRoom() {
-  room_name= document.getElementById("roomname").value;
+  var room_name= document.getElementById("roomname").value;
   localStorage.setItem("room_name", room_name);
   firebase.database().ref("/").child(room_name).update({
     purpose : "adding new room"
@@ -27,7 +27,7 @@ function addRoom() {
 };
 
 function getData() {
-  firebase.database().ref("/").onDataChange(function (snapshot) {
+  firebase.database().ref("/").on('value', function (snapshot) {
     document.getElementById("output").innerHTML= " ";
     snapshot.forEach(function (snapshot) {
       room_names= snapshot.key;
@@ -37,6 +37,7 @@ function getData() {
     });
   });
 };
+getData();
 
 function redirectToRoomName(name) {
   localStorage.setItem("room_name", name);
